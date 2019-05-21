@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ZombieEvent.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: corosteg <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 16:26:11 by corosteg          #+#    #+#             */
-/*   Updated: 2019/05/21 16:26:12 by corosteg         ###   ########.fr       */
+/*   Created: 2019/05/21 18:39:09 by corosteg          #+#    #+#             */
+/*   Updated: 2019/05/21 18:39:10 by corosteg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+//Necro-Mortosis
 #include <iostream>
-#include "./Pony.hpp"
+#include "ZombieEvent.hpp"
 
-int     main() {
-    Pony    mother = Pony("Mom", "drugs", "stack", false);
-    Pony*   pony1 = mother.ponyOnTheHeap();
-    Pony    pony2 = mother.ponyOnTheStack();
+void    ZombieEvent::setZombieType(std::string type) {
+    this->_type = type;
+    return;
+}
 
-    delete pony1;
-    return 0;
+Zombie*     ZombieEvent::newZombie(std::string name) {
+    Zombie*  zombie = new Zombie(name, this->_type);
+
+    return zombie;
+}
+
+void        ZombieEvent::randomChump() {
+    char*  names[] = {"Tom", "Bob", "Jack", "Henry"};
+
+    std::cout << names << std::endl;
 }

@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ZombieEvent.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: corosteg <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 16:26:11 by corosteg          #+#    #+#             */
-/*   Updated: 2019/05/21 16:26:12 by corosteg         ###   ########.fr       */
+/*   Created: 2019/05/21 18:39:40 by corosteg          #+#    #+#             */
+/*   Updated: 2019/05/21 18:39:41 by corosteg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "./Pony.hpp"
+#ifndef ZOMBIEEVENT_H
+# define ZOMBIEEVENT_H
+#include "Zombie.hpp"
 
-int     main() {
-    Pony    mother = Pony("Mom", "drugs", "stack", false);
-    Pony*   pony1 = mother.ponyOnTheHeap();
-    Pony    pony2 = mother.ponyOnTheStack();
+class ZombieEvent {
+    
+public:
 
-    delete pony1;
-    return 0;
-}
+    Zombie* newZombie(std::string name);
+    void    randomChump();
+    void    setZombieType( std::string type );
+
+private:
+
+    std::string     _type;
+
+};
+
+#endif

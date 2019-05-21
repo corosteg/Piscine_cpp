@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: corosteg <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 16:26:11 by corosteg          #+#    #+#             */
-/*   Updated: 2019/05/21 16:26:12 by corosteg         ###   ########.fr       */
+/*   Created: 2019/05/21 18:38:59 by corosteg          #+#    #+#             */
+/*   Updated: 2019/05/21 18:39:00 by corosteg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "./Pony.hpp"
+#include "Zombie.hpp"
 
-int     main() {
-    Pony    mother = Pony("Mom", "drugs", "stack", false);
-    Pony*   pony1 = mother.ponyOnTheHeap();
-    Pony    pony2 = mother.ponyOnTheStack();
+Zombie::Zombie( std::string choosed_name, std::string choosed_type) : name(choosed_name), type(choosed_type) {
+    this->announce();
+    return;
+}
 
-    delete pony1;
-    return 0;
+void    Zombie::announce() {
+    std::cout << '<' << this->name << " (" << this->type << ")>" << " Braiiiiiiinnnssss..." << std::endl;
 }
