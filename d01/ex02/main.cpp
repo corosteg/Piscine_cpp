@@ -20,7 +20,7 @@ int     main()
     ZombieEvent event;
 
     event.setZombieType("ghoul");
-    Zombie*     zombie1 = event.newZombie("jack");
+    event.randomChump();
 
     return 0;
 }
