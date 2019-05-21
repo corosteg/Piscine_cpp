@@ -14,7 +14,6 @@
 #include "Zombie.hpp"
 
 Zombie::Zombie( std::string choosed_name, std::string choosed_type) : name(choosed_name), type(choosed_type) {
-    this->announce();
     return;
 }
 
