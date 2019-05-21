@@ -28,7 +28,8 @@ Zombie*     ZombieEvent::newZombie(std::string name) {
 }
 
 void        ZombieEvent::randomChump() {
-    char  names[4][10] = {"Tom", "Bob", "Jack", "Henry"};
+    char  names[10][10] = {"Tom", "Bob", "Jack", "Henry", "Jim",
+        "Paul", "Anna", "Patrik", "Jean", "Benoit"};
 
-    std::cout << names[rand() % 4] << std::endl;
+    std::cout << rand() % 10 << std::endl;
 }
