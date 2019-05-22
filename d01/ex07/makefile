@@ -1,15 +1,15 @@
-NAME = des
+NAME = replace
 
 CPPFLAGS = -Wall -Wextra -Werror -g
 
-SRC = des.cpp
+SRC = main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-	c++ ${CPPFLAGS} -o $@ ${OBJ}
+	clang++ ${CPPFLAGS} -o $@ ${OBJ}
 
 clean:
 	@/bin/rm -f ${OBJ}

@@ -14,7 +14,7 @@
 #include "./Pony.hpp"
 
 Pony::Pony( std::string name, std::string like, std::string where, bool male )
-        : name(name), like(like), where(where), male(male) {
+        : male(male), name(name), like(like), where(where) {
     
     if (this->male) {
         std::cout << "A pony born on the " << this->where << " his name is ";
