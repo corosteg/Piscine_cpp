@@ -6,8 +6,9 @@ Brain::Brain( void )
 Brain::~Brain( void )
 {}
 
-#include <iostream>
-
-void    Brain::test() {
-    std::cout << "hello" << std::endl;
+std::string Brain::identify() {
+    std::stringstream	ss;
+	ss << (void *)this;
+	std::string str = ss.str();
+	return (str);
 }

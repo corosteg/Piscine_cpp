@@ -1,25 +1,17 @@
 #include "Brain.hpp"
 #include "Human.hpp"
+#include <iostream>
 
-Human::Human() : _brain( new Brain )
+Human::Human() : _brain( Brain() ), _brainRef( this->_brain )
 {}
 
 Human::~Human( void )
-{
-    // delete this->_brain;
+{}
+
+Brain           Human::getBrain() {
+    return this->_brainRef;
 }
 
-Brain*      Human::getBrain() {
-    // const Brain*    address = this->_brain;
-
-    // const Brain&    test = *address;
-    // test.test();
-    // this->_brain->test();
-
-    return this->_brain;
-}
-
-Brain*      Human::identify( ) {
-    // const Brain*    address = this->_brain;
-    return this->_brain;
+const Brain*    Human::identify( ) {
+    return &this->_brainRef;
 }

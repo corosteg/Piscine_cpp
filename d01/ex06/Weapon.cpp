@@ -10,6 +10,6 @@ std::string&    Weapon::getType() {
     return this->ref;
 }
 
-void            Weapon::setType() {
-    this->ref = "hello";
+void            Weapon::setType( std::string str ) {
+    this->ref = str;
 }

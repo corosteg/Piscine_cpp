@@ -10,12 +10,13 @@ public:
     Human( void );
     ~Human( void );
 
-    Brain*  getBrain();
-    Brain*  identify();
+    Brain           getBrain();
+    const Brain*    identify();
 
 private:
 
-    const Brain*  _brain;
+    const Brain     _brain;
+    const Brain&    _brainRef;
 
 };
 
