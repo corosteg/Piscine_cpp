@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-//Necro-Mortosis
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 #include "ZombieEvent.hpp"
 
 void    ZombieEvent::setZombieType(std::string type) {
@@ -30,6 +29,9 @@ Zombie*     ZombieEvent::newZombie(std::string name) {
 void        ZombieEvent::randomChump() {
     char  names[10][10] = {"Tom", "Bob", "Jack", "Henry", "Jim",
         "Paul", "Anna", "Patrik", "Jean", "Benoit"};
-
-    std::cout << rand() % 10 << std::endl;
+    
+    srand(time(NULL));
+    Zombie*     zombie = this->newZombie(names[ rand() % 10]);
+    zombie->announce();
+    delete zombie;
 }

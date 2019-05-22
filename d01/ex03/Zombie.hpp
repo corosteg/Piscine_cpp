@@ -13,6 +13,7 @@
 
 #ifndef ZOMBIE_H
 # define ZOMBIE_H
+#include <iostream>
 
 class Zombie {
 
@@ -22,6 +23,7 @@ public:
     std::string     type;
 
     Zombie( std::string choosed_name, std::string choosed_type);
+    Zombie();
 
     void    announce();
 };

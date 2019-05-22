@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: corosteg <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 18:39:03 by corosteg          #+#    #+#             */
-/*   Updated: 2019/05/21 18:39:04 by corosteg         ###   ########.fr       */
+/*   Created: 2019/05/21 18:39:14 by corosteg          #+#    #+#             */
+/*   Updated: 2019/05/21 18:39:15 by corosteg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
+#include "ZombieHorde.hpp"
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
+void    test_leaks()
+{
+    ZombieHorde  zombies = ZombieHorde(10);
 
-class Zombie {
+    zombies.announce();
+}
 
-public:
-
-    std::string     name;
-    std::string     type;
-
-    Zombie( std::string choosed_name, std::string choosed_type);
-
-    void    announce();
-};
-
-#endif
+int     main()
+{
+    test_leaks();
+    
+    return 0;
+}

@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   ZombieHorde.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: corosteg <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 18:39:03 by corosteg          #+#    #+#             */
-/*   Updated: 2019/05/21 18:39:04 by corosteg         ###   ########.fr       */
+/*   Created: 2019/05/21 18:39:14 by corosteg          #+#    #+#             */
+/*   Updated: 2019/05/21 18:39:15 by corosteg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ZOMBIEHORDE_H
+#define ZOMBIEHORDE_H
+#include "Zombie.hpp"
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
-
-class Zombie {
+class ZombieHorde {
 
 public:
 
-    std::string     name;
-    std::string     type;
 
-    Zombie( std::string choosed_name, std::string choosed_type);
+    ZombieHorde( int N );
+    ~ZombieHorde( void );
 
     void    announce();
+
+private:
+
+    Zombie*     _zombies;
+    int         horde_size;
+
 };
 
 #endif
