@@ -22,7 +22,7 @@ public:
     Brain( void );
     ~Brain( void );
 
-    std::string identify();
+    std::string identify() const ;
 
 };
 

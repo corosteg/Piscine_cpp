@@ -20,14 +20,10 @@ Human::Human() : _brain( Brain() )
 Human::~Human( void )
 {}
 
-// Brain           Human::getBrain() {
-//     return this->_brainRef;
-// }
+const Brain&    Human::getBrain() {
+    return this->_brain;
+}
 
-// const Brain*    Human::identify( ) {
-//     return &this->_brainRef;
-// }
-
-void        Human::test() {
-    std::cout << this->_brain.identify() << std::endl;
+std::string     Human::identify( ) {
+    return this->_brain.identify();
 }

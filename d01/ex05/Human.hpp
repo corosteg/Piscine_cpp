@@ -22,14 +22,12 @@ public:
     Human( void );
     ~Human( void );
 
-    // Brain           getBrain();
-    // const Brain*    identify();
-    void        test();
+    const Brain&    getBrain();
+    std::string     identify();
 
 private:
 
     const Brain     _brain;
-    // Brain& const    _brainRef;
 
 };
 

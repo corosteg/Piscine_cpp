@@ -17,7 +17,7 @@ int main()
 {
     Human bob;
 
-    bob.test();
-    // std::cout << bob.identify() << std::endl;
-    // std::cout << bob.getBrain().identify() << std::endl;
+    // bob.test();
+    std::cout << bob.identify() << std::endl;
+    std::cout << bob.getBrain().identify() << std::endl;
 }
