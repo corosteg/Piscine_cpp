@@ -12,13 +12,9 @@
 
 #ifndef FRAGTRAP_H
 #define FRAGTRAP_H
-
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap {
+class FragTrap : public virtual ClapTrap {
 
 public:
 

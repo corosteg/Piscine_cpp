@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
-#include "ScavTrap.hpp"
-#include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 
 int         main()
 {
@@ -69,6 +67,15 @@ int         main()
     ninja1.ninjaShoebox(clapTrap);
 
     std::cout << std::endl;
+
+    SuperTrap       superTrap("Bob");
+
+    superTrap.vaulthunter_dot_exe("jojo");
+    superTrap.vaulthunter_dot_exe("jojo");
+    superTrap.vaulthunter_dot_exe("jojo");
+    superTrap.ninjaShoebox(robot1);
+    superTrap.meleeAttack("tutu");
+    superTrap.rangedAttack("tutu");
 
     return 0;
 }

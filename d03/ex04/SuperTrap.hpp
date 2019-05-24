@@ -25,9 +25,8 @@ public:
 
     SuperTrap &     operator=( SuperTrap const & rhs );
 
-    void            test( void );
-
-    // FragTrap::_hitPoints;
+    void            meleeAttack(std::string const & target) const;
+    void            rangedAttack(std::string const & target) const;
 
 };
 

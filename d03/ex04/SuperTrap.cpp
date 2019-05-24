@@ -12,13 +12,29 @@
 
 #include "SuperTrap.hpp"
 
-SuperTrap::SuperTrap(void) : NinjaTrap(), FragTrap()
+SuperTrap::SuperTrap(void) : NinjaTrap(), FragTrap(), ClapTrap()
 {
+    this->_hitPoints = 100;
+    this->_maxHitPoints = 100;
+    this->_energyPoints = 120;
+    this->_maxEnergyPoints = 120;
+    this->_level = 1;
+    this->_meleeAttackDamage = 60;
+    this->_rangedAttackDamage = 20;
+    this->_armorDamageReduction = 5;
     std::cout << "Default constructor of SuperTrap is called" << std::endl;
 }
 
-SuperTrap::SuperTrap(std::string name) : FragTrap(name)
+SuperTrap::SuperTrap(std::string name) : FragTrap(name), NinjaTrap(name), ClapTrap(name)
 {
+    this->_hitPoints = 100;
+    this->_maxHitPoints = 100;
+    this->_energyPoints = 120;
+    this->_maxEnergyPoints = 120;
+    this->_level = 1;
+    this->_meleeAttackDamage = 60;
+    this->_rangedAttackDamage = 20;
+    this->_armorDamageReduction = 5;
     std::cout << "Constructor of SuperTrap is called" << std::endl;
 }
 
@@ -39,8 +55,10 @@ SuperTrap &      SuperTrap::operator=( SuperTrap const & rhs )
     return *this;
 }
 
-void            SuperTrap::test()
-{
-    std::cout << this->_name << std::endl;;
-    std::cout << this->_maxEnergyPoints << std::endl;
+void            SuperTrap::rangedAttack(std::string const & target) const {
+    std::cout << "FR4G-TP ( SOLDIER ) " << this->_name << " attacks " << target << " at range, causing " << this->_rangedAttackDamage << " points of damage !" << std::endl;
+}
+
+void            SuperTrap::meleeAttack(std::string const & target) const {
+    std::cout << "FR4G-TP ( Fucking Ninja!! ) "  << this->_name << " attacks " << target << " at melee, causing " << this->_meleeAttackDamage << " points of damage !" << std::endl;
 }

@@ -51,6 +51,42 @@ NinjaTrap &     NinjaTrap::operator=( NinjaTrap const & rhs )
     return *this;
 }
 
+void            NinjaTrap::rangedAttack(std::string const & target) const {
+    std::cout << "FR4G-TP ( Fucking Ninja!! ) " << this->_name << " attacks " << target << " at range, causing " << this->_rangedAttackDamage << " points of damage !" << std::endl;
+}
+
+void            NinjaTrap::meleeAttack(std::string const & target) const {
+    std::cout << "FR4G-TP ( Fucking Ninja!! ) "  << this->_name << " attacks " << target << " at melee, causing " << this->_meleeAttackDamage << " points of damage !" << std::endl;
+}
+
+void            NinjaTrap::takeDamage(unsigned int amount) {
+    std::cout << "FR4G-TP ( Fucking Ninja!! ) "  << this->_name << " received " << amount << " damage " << std::endl;
+    while(amount > 0)
+    {
+        if (this->_armorDamageReduction > 0)
+            this->_armorDamageReduction--;
+        else if (this->_hitPoints > 0)
+            this->_hitPoints--;
+        amount--;
+    }
+    std::cout << "FR4G-TP ( Fucking Ninja!! ) "  << this->_name << " have now " << this->_armorDamageReduction << " armor and " << this->_hitPoints << " hit points" << std::endl;
+    if (this->_hitPoints == 0)
+    {
+        std::cout << this->_name << " Died!! :(" << std::endl;
+    }
+}
+
+void            NinjaTrap::beRepaired(unsigned int amount) {
+    std::cout << "FR4G-TP ( Fucking Ninja!! ) "  << this->_name << " was repareid and received " << amount << " hit points " << std::endl;
+    while(amount > 0)
+    {
+        if (this->_hitPoints < this->_maxHitPoints)
+            this->_hitPoints++;
+        amount--;
+    }
+    std::cout << "FR4G-TP ( Fucking Ninja!! ) "  << this->_name << " have now " << this->_hitPoints << " hit points " << std::endl;
+}
+
 NinjaTrap::~NinjaTrap()
 {
     std::cout << "Destructor of NinjaTrap is called" << std::endl;
