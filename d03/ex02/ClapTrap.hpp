@@ -27,11 +27,7 @@ public:
     ~ClapTrap();
 
     ClapTrap &      operator=( ClapTrap const & rhs );
-
-    std::string     getName() const;
-    int             getHitPoints() const;
-    int             getArmor() const;
-
+    
     void            rangedAttack(std::string const & target) const;
     void            meleeAttack(std::string const & target) const;
     void            takeDamage(unsigned int amount);

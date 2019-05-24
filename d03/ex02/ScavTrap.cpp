@@ -40,13 +40,55 @@ ScavTrap::ScavTrap( std::string name ) : ClapTrap(name)
     std::cout << "Constructor of ScavTrap is called" << std::endl;
 }
 
+ScavTrap::ScavTrap( ScavTrap const & src)
+{
+    *this = src;
+
+    return;
+}
+
 ScavTrap::~ScavTrap( void ) {
     std::cout << "Destructor of ScavTrap is called" << std::endl;
 }
 
 ScavTrap &      ScavTrap::operator=( const ScavTrap & rhs ) {
-    this->_name = rhs.getName();
     return *this;
+}
+
+void            ScavTrap::rangedAttack(std::string const & target) const {
+    std::cout << "FR4G-TP ( " << this->_job << " ) " << this->_name << " attacks " << target << " at range, causing " << this->_rangedAttackDamage << " points of damage !" << std::endl;
+}
+
+void            ScavTrap::meleeAttack(std::string const & target) const {
+    std::cout << "FR4G-TP ( " << this->_job << " ) "  << this->_name << " attacks " << target << " at melee, causing " << this->_meleeAttackDamage << " points of damage !" << std::endl;
+}
+
+void            ScavTrap::takeDamage(unsigned int amount) {
+    std::cout << "FR4G-TP ( " << this->_job << " ) "  << this->_name << " received " << amount << " damage " << std::endl;
+    while(amount > 0)
+    {
+        if (this->_armorDamageReduction > 0)
+            this->_armorDamageReduction--;
+        else if (this->_hitPoints > 0)
+            this->_hitPoints--;
+        amount--;
+    }
+    std::cout << "FR4G-TP ( " << this->_job << " ) "  << this->_name << " have now " << this->_armorDamageReduction << " armor and " << this->_hitPoints << " hit points" << std::endl;
+    if (this->_hitPoints == 0)
+    {
+        std::cout << this->_name << " Died!! :(" << std::endl;
+    }
+}
+
+void            ScavTrap::beRepaired(unsigned int amount) {
+    std::cout << "FR4G-TP ( " << this->_job << " ) "  << this->_name << " was repareid and received " << amount << " hit points " << std::endl;
+    while(amount > 0)
+    {
+        if (this->_hitPoints < this->_maxHitPoints)
+            this->_hitPoints++;
+        amount--;
+    }
+    std::cout << "FR4G-TP ( " << this->_job << " ) "  << this->_name << " have now " << this->_hitPoints << " hit points " << std::endl;
 }
 
 void            ScavTrap::challengeNewcomer() {
@@ -59,13 +101,4 @@ void            ScavTrap::challengeNewcomer() {
     };
     srand(time(NULL));
     std::cout << this->_name << " give you a chellenge: " << challengeStr[ rand() % 5 ] << std::endl;
-}
-
-std::ostream &  operator<<( std::ostream & o, ScavTrap const & i ) {
-    o << i.getName() << " STRUCT" << std::endl << "[" << std::endl;
-    o << "Hit points => " << i.getHitPoints() << std::endl;
-    o << "Armor => " << i.getArmor() << std::endl;
-    o << "]" << std::endl;
-
-    return o;
 }

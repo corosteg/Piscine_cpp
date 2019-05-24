@@ -40,6 +40,13 @@ FragTrap::FragTrap( std::string name )
     std::cout << "Constructor of FragTrap is called" << std::endl;
 }
 
+FragTrap::FragTrap( FragTrap const & src )
+{
+    *this = src;
+
+    return;
+}
+
 FragTrap::~FragTrap( void ) {
     std::cout << "Destructor of FragTrap is called" << std::endl;
 }
@@ -115,14 +122,3 @@ void            FragTrap::vaulthunter_dot_exe(std::string const & target) {
     else
         std::cout << "it’s out of energy" << std::endl;
 }
-
-
-std::ostream &  operator<<( std::ostream & o, FragTrap const & i ) {
-    o << i.getName() << " STRUCT" << std::endl << "[" << std::endl;
-    o << "Hit points => " << i.getHitPoints() << std::endl;
-    o << "Armor => " << i.getArmor() << std::endl;
-    o << "]" << std::endl;
-
-    return o;
-}
-

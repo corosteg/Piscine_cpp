@@ -23,7 +23,6 @@ NinjaTrap::NinjaTrap( void ) : ClapTrap()
     this->_meleeAttackDamage = 60;
     this->_rangedAttackDamage = 5;
     this->_armorDamageReduction = 0;
-    this->_job = "Fucking Ninja!!";
     std::cout << "Default constructor of NinjaTrap is called" << std::endl;
 }
 
@@ -37,8 +36,19 @@ NinjaTrap::NinjaTrap( std::string name ) : ClapTrap(name)
     this->_meleeAttackDamage = 60;
     this->_rangedAttackDamage = 5;
     this->_armorDamageReduction = 0;
-    this->_job = "Fucking Ninja!!";
-    std::cout << "Default constructor of NinjaTrap is called" << std::endl;
+    std::cout << "Constructor of NinjaTrap is called" << std::endl;
+}
+
+NinjaTrap::NinjaTrap( NinjaTrap const & src )
+{
+    *this = src;
+
+    return;
+}
+
+NinjaTrap &     NinjaTrap::operator=( NinjaTrap const & rhs )
+{
+    return *this;
 }
 
 NinjaTrap::~NinjaTrap()
@@ -48,21 +58,21 @@ NinjaTrap::~NinjaTrap()
 
 void        NinjaTrap::ninjaShoebox( NinjaTrap const & target ) const
 {
-    std::cout << this->_name << " is talking with his ninja friend " << target.getName() << std::endl;
+    std::cout << this->_name << " is talking with his ninja friend " << std::endl;
 }
 
 void        NinjaTrap::ninjaShoebox( ScavTrap const & target ) const
 {
-    std::cout << this->_name << " is playing football with his scavTrap friend " << target.getName() << std::endl;
+    std::cout << this->_name << " is playing football with his scavTrap friend " << std::endl;
 }
 
 void        NinjaTrap::ninjaShoebox( FragTrap const & target ) const
 {
-    std::cout << this->_name << " is drunking with his fragTrap friend " << target.getName() << std::endl;
+    std::cout << this->_name << " is drunking with his fragTrap friend " << std::endl;
 }
 
 void        NinjaTrap::ninjaShoebox( ClapTrap const & target ) const
 {    
-    std::cout << this->_name << " is taking a break with other Claptrap " << target.getName() << ", yeah because " << this->_name;
+    std::cout << this->_name << " is taking a break with other Claptrap " << ", yeah because " << this->_name;
     std::cout << " is a Claptrap after all... " << std::endl;
 }

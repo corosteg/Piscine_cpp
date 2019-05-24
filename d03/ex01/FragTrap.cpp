@@ -40,6 +40,13 @@ FragTrap::FragTrap( std::string name )
     std::cout << "Constructor of FragTrap is called" << std::endl;
 }
 
+FragTrap::FragTrap( FragTrap const & src )
+{
+    *this = src;
+
+    return;
+}
+
 FragTrap::~FragTrap( void ) {
     std::cout << "Destructor of FragTrap is called" << std::endl;
 }

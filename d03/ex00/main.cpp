@@ -36,7 +36,6 @@ int         main()
     robot2.vaulthunter_dot_exe(robot1.getName());
     robot2.vaulthunter_dot_exe(robot1.getName());
     robot2.vaulthunter_dot_exe(robot1.getName());
-    std::cout << std::endl << robot2 << std::endl;
     
     return 0;
 }

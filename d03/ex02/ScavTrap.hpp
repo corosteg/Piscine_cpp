@@ -29,10 +29,12 @@ public:
 
     ScavTrap &      operator=( ScavTrap const & rhs );
 
+    void            rangedAttack(std::string const & target) const;
+    void            meleeAttack(std::string const & target) const;
+    void            takeDamage(unsigned int amount);
+    void            beRepaired(unsigned int amount);
     void            challengeNewcomer();
 
 };
-
-std::ostream &  operator<<( std::ostream & o, ScavTrap const & i);
 
 #endif

@@ -14,16 +14,20 @@
 #define SUPERTRAP_H
 #include "NinjaTrap.hpp"
 
-class SuperTrap : public ScavTrap, public NinjaTrap {
+class SuperTrap : public NinjaTrap, public FragTrap {
 
 public:
 
     SuperTrap( void );
-    SuperTrap(std::string name);
+    SuperTrap( std::string name );
     SuperTrap( SuperTrap const & src );
     ~SuperTrap();
 
     SuperTrap &     operator=( SuperTrap const & rhs );
+
+    void            test( void );
+
+    // FragTrap::_hitPoints;
 
 };
 

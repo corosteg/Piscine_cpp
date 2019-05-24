@@ -28,20 +28,9 @@ public:
 
     ClapTrap &      operator=( ClapTrap const & rhs );
 
-    std::string     getName() const;
-    int             getHitPoints() const;
-    int             getArmor() const;
-
-    void            rangedAttack(std::string const & target) const;
-    void            meleeAttack(std::string const & target) const;
-    void            takeDamage(unsigned int amount);
-    void            beRepaired(unsigned int amount);
-
-
 protected:
 
     std::string     _name;
-    std::string     _job;
     int             _hitPoints;
     int             _maxHitPoints;
     int             _energyPoints;
@@ -52,7 +41,5 @@ protected:
     int             _armorDamageReduction;
 
 };
-
-std::ostream &  operator<<( std::ostream & o, ClapTrap const & i);
 
 #endif

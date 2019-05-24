@@ -12,9 +12,13 @@
 
 #ifndef SCAVTRAP_H
 #define SCAVTRAP_H
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include "ClapTrap.hpp"
 
-class ScavTrap : public virtual ClapTrap {
+class ScavTrap : public ClapTrap {
 
 public:
 
@@ -25,10 +29,12 @@ public:
 
     ScavTrap &      operator=( ScavTrap const & rhs );
 
+    void            rangedAttack(std::string const & target) const;
+    void            meleeAttack(std::string const & target) const;
+    void            takeDamage(unsigned int amount);
+    void            beRepaired(unsigned int amount);
     void            challengeNewcomer();
 
 };
-
-std::ostream &  operator<<( std::ostream & o, ScavTrap const & i);
 
 #endif

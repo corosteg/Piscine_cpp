@@ -40,6 +40,13 @@ ScavTrap::ScavTrap( std::string name )
     std::cout << "Constructor of ScavTrap is called" << std::endl;
 }
 
+ScavTrap::ScavTrap( ScavTrap const & src)
+{
+    *this = src;
+
+    return;
+}
+
 ScavTrap::~ScavTrap( void ) {
     std::cout << "Destructor of ScavTrap is called" << std::endl;
 }

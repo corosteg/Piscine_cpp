@@ -13,9 +13,12 @@
 #ifndef FRAGTRAP_H
 #define FRAGTRAP_H
 
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include "ClapTrap.hpp"
 
-class FragTrap : public virtual ClapTrap {
+class FragTrap : public ClapTrap {
 
 public:
 
@@ -26,10 +29,12 @@ public:
 
     FragTrap &      operator=( FragTrap const & rhs );
 
+    void            rangedAttack(std::string const & target) const;
+    void            meleeAttack(std::string const & target) const;
+    void            takeDamage(unsigned int amount);
+    void            beRepaired(unsigned int amount);
     void            vaulthunter_dot_exe(std::string const & target);
 
 };
-
-std::ostream &  operator<<( std::ostream & o, FragTrap const & i);
 
 #endif
