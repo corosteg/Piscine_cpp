@@ -39,7 +39,7 @@ public:
     void            vaulthunter_dot_exe(std::string const & target);
 
 
-private:
+protected:
 
     std::string     _name;
     int             _hitPoints;
