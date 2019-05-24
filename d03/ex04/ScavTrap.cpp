@@ -50,6 +50,7 @@ ScavTrap::~ScavTrap( void ) {
 }
 
 ScavTrap &      ScavTrap::operator=( const ScavTrap & rhs ) {
+    this->_name = rhs._name;
     return *this;
 }
 

@@ -51,6 +51,7 @@ FragTrap::~FragTrap( void ) {
 }
 
 FragTrap &      FragTrap::operator=( const FragTrap & rhs ) {
+    this->_name = rhs._name;
     return *this;
 }
 

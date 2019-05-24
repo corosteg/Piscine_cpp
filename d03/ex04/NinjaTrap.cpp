@@ -48,6 +48,7 @@ NinjaTrap::NinjaTrap( NinjaTrap const & src )
 
 NinjaTrap &     NinjaTrap::operator=( NinjaTrap const & rhs )
 {
+    this->_name = rhs._name;
     return *this;
 }
 
@@ -94,21 +95,21 @@ NinjaTrap::~NinjaTrap()
 
 void        NinjaTrap::ninjaShoebox( NinjaTrap const & target ) const
 {
-    std::cout << this->_name << " is talking with his ninja friend " << std::endl;
+    std::cout << this->_name << " is talking with his ninja friend " << target._name << std::endl;
 }
 
 void        NinjaTrap::ninjaShoebox( ScavTrap const & target ) const
 {
-    std::cout << this->_name << " is playing football with his scavTrap friend " << std::endl;
+    std::cout << this->_name << " is playing football with his scavTrap friend " << target._name << std::endl;
 }
 
 void        NinjaTrap::ninjaShoebox( FragTrap const & target ) const
 {
-    std::cout << this->_name << " is drunking with his fragTrap friend " << std::endl;
+    std::cout << this->_name << " is drunking with his fragTrap friend " << target._name << std::endl;
 }
 
 void        NinjaTrap::ninjaShoebox( ClapTrap const & target ) const
 {    
-    std::cout << this->_name << " is taking a break with other Claptrap " << ", yeah because " << this->_name;
+    std::cout << this->_name << " is taking a break with other Claptrap " << target._name << ", yeah because " << this->_name;
     std::cout << " is a Claptrap after all... " << std::endl;
 }

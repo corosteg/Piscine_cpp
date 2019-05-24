@@ -21,6 +21,8 @@ class ClapTrap {
 
 public:
 
+    std::string     _name;
+
     ClapTrap( void );
     ClapTrap( std::string name );
     ClapTrap( ClapTrap const & src );
@@ -30,7 +32,6 @@ public:
 
 protected:
 
-    std::string     _name;
     int             _hitPoints;
     int             _maxHitPoints;
     int             _energyPoints;

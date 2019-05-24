@@ -52,5 +52,7 @@ ClapTrap::~ClapTrap( void ) {
 }
 
 ClapTrap &      ClapTrap::operator=( const ClapTrap & rhs ) {
+    this->_name = rhs._name;
+
     return *this;
 }

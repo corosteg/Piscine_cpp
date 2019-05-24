@@ -12,7 +12,7 @@
 
 #include "SuperTrap.hpp"
 
-SuperTrap::SuperTrap(void) : NinjaTrap(), FragTrap(), ClapTrap()
+SuperTrap::SuperTrap(void) : ClapTrap(), NinjaTrap(), FragTrap()
 {
     this->_hitPoints = 100;
     this->_maxHitPoints = 100;
@@ -25,7 +25,7 @@ SuperTrap::SuperTrap(void) : NinjaTrap(), FragTrap(), ClapTrap()
     std::cout << "Default constructor of SuperTrap is called" << std::endl;
 }
 
-SuperTrap::SuperTrap(std::string name) : FragTrap(name), NinjaTrap(name), ClapTrap(name)
+SuperTrap::SuperTrap(std::string name) : ClapTrap(name), NinjaTrap(name), FragTrap(name)
 {
     this->_hitPoints = 100;
     this->_maxHitPoints = 100;
@@ -52,6 +52,7 @@ SuperTrap::~SuperTrap()
 
 SuperTrap &      SuperTrap::operator=( SuperTrap const & rhs ) 
 {
+    this->_name = rhs._name;
     return *this;
 }
 
