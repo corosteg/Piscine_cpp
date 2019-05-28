@@ -4,7 +4,7 @@ PresidentialPardonForm::PresidentialPardonForm( void ) {}
  
 PresidentialPardonForm::PresidentialPardonForm( std::string target )
     : Form(
-        "RobotomyRequestForm",
+        "PresidentialPardonForm",
         25,
         5,
         target

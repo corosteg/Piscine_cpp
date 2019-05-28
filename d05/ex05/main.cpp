@@ -16,7 +16,7 @@ int         main()
 
     // All office mens with all rights
     ob2.doBureaucracy("shrubbery creation", "bender");
-    // ob2.doBureaucracy("robotomy request", "bender");
+    ob2.doBureaucracy("robotomy request", "bender");
     ob2.doBureaucracy("presidential pardon", "bender");
     std::cout << std::endl;
     
