@@ -9,7 +9,7 @@ struct Data
 
 void		*serialize( void )
 {
-	static const std::string	random_data[10] =
+	static const std::string	random_data[4] =
 	{
 		"ABCDefg",
 		"hijKLMN",
@@ -18,9 +18,9 @@ void		*serialize( void )
 	};
 
 	Data	*data = new Data();
-	data->s1 = random_data[std::rand() % 10];
+	data->s1 = random_data[std::rand() % 4];
 	data->n = std::rand();
-	data->s2 = random_data[std::rand() % 10];
+	data->s2 = random_data[std::rand() % 4];
 
 	return data;
 }
@@ -34,12 +34,12 @@ int			main( void )
 {
 	std::srand(std::time(nullptr));
 
-	void	*tutu = serialize();
+	void	*foo = serialize();
 
-	Data	*tata = deserialize(tutu);
+	Data	*bar = deserialize(foo);
 
-	std::cout << "data->s1: " << tata->s1 << std::endl;
-	std::cout << "data->n: " << tata->n << std::endl;
-	std::cout << "data->s2: " << tata->s2 << std::endl;
+	std::cout << "data->s1: " << bar->s1 << std::endl;
+	std::cout << "data->n: " << bar->n << std::endl;
+	std::cout << "data->s2: " << bar->s2 << std::endl;
 	return (0);
 }
