@@ -19,6 +19,8 @@ public:
 
 
     Array( void )
+        : _arr(new T[0]),
+        _size(0)
     {};
     
     Array(unsigned int n)
@@ -31,13 +33,23 @@ public:
     size_t      size() {return _size;}
 
     T &         operator[]( size_t index ) {
-        if (index > _size - 1)
+        if (_size == 0)
+            throw OutOfArray<void>();
+        else if (index > _size - 1)
             throw OutOfArray<void>();
         else
             return _arr[index];
     }
 
-// private:
+    void        operator=( Array & rhs ) {
+        delete [] this->_arr;
+        this->_arr = new T[rhs.size()];
+        this->_size = rhs.size();
+        for (size_t i = 0; i < rhs.size() ; i++)
+            this->_arr[i] = rhs[i];
+    }
+
+private:
 
     T           *_arr;
     size_t      _size;
