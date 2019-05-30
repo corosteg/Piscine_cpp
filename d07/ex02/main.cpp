@@ -1,5 +1,5 @@
 #include "Array.hpp"
-#include <unistd.h> // for sleep for test leaks, line 246
+// #include <unistd.h> // for sleep for test leaks, line 246
 
 void        testInt()
 {
@@ -243,7 +243,7 @@ int         main()
     std::cout << std::endl << std::endl;
     testString();
 
-    sleep(10); // for testing if leaks (but it don't have leaks ;) )
+    // sleep(10); // for testing if leaks (but it don't have leaks ;) )
 
     return 0;    
 }
