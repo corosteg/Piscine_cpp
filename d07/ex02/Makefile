@@ -1,6 +1,6 @@
 NAME = a.out
 
-SRC_NAME = Array.cpp main.c
+SRC_NAME = main.cpp
 
 OBJ_PATH = obj
 
